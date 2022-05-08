@@ -1,0 +1,29 @@
+.label {
+  display: flex;
+  margin-right: 50px;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.input {
+  margin-top: 5px;
+  width: 200px;
+  height: 30px;
+}
+
+.button {
+  width: 150px;
+  padding: 5px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(188, 184, 184);
+  border: rgb(147, 144, 144) 3px solid;
+}
+
+.button:hover,
+.button:focus {
+  background-color: rgb(142, 140, 140);
+}
