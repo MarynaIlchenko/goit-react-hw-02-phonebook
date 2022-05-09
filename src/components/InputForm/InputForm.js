@@ -1,12 +1,33 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-// import nanoid from 'nanoid';
 import style from './InputForm.module.css';
+import { nanoid } from 'nanoid';
 
-class InputForm extends Component {
+export class InputForm extends Component {
   state = {
     name: '',
     number: '',
+  };
+
+  onChangeInput = e => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+  onSubmitForm = e => {
+    e.preventDefault();
+    this.props.onSubmit({
+      name: this.state.name,
+      number: this.state.number,
+      id: nanoid(),
+    });
+    this.reset(e);
+  };
+
+  reset = e => {
+    this.setState({ name: '', number: '' });
+    e.currentTarget.reset();
   };
 
   render() {
@@ -49,5 +70,3 @@ class InputForm extends Component {
 InputForm.propTypes = {
   onSubmit: propTypes.func,
 };
-
-export default InputForm;
