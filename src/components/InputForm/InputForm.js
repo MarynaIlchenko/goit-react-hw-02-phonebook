@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import style from './InputForm.module.css';
 import { nanoid } from 'nanoid';
 
-export class InputForm extends Component {
+class InputForm extends Component {
   state = {
     name: '',
     number: '',
@@ -70,3 +70,5 @@ export class InputForm extends Component {
 InputForm.propTypes = {
   onSubmit: propTypes.func,
 };
+
+export default InputForm;

@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react';
 import React, { Component } from 'react';
-import { InputForm } from './InputForm';
-import { ContactList } from './ContactList';
-import { Filter } from './Filter';
+import InputForm from './InputForm/InputForm';
+import ContactList from './ContactList/ContactList';
+import Filter from './Filter/Filter';
 
 export class App extends Component {
   state = {
     contacts: [],
-    name: '',
+    filter: '',
   };
 
   onAddContact = contact => {
@@ -57,7 +57,7 @@ export class App extends Component {
         <Filter value={this.state.filter} onChange={this.onChangeFilter} />
         <ContactList
           contactsArr={this.getAddedContacts()}
-          deleteContact={this.onDeleteContact()}
+          deleteContact={this.onDeleteContact}
         />
       </div>
     );

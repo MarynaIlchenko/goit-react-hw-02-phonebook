@@ -2,7 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import style from './ContactList.module.css';
 
-export const ContactList = ({ contactsArr, deleteContact }) => {
+const ContactList = ({ contactsArr, deleteContact }) => {
   return (
     <div>
       <ul>
@@ -36,3 +36,5 @@ ContactList.propTypes = {
     })
   ),
 };
+
+export default ContactList;
