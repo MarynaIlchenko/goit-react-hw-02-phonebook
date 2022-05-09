@@ -5,13 +5,13 @@ import style from './ContactList.module.css';
 const ContactList = ({ contactsArr, deleteContact }) => {
   return (
     <div>
-      <ul>
+      <ul className={style.listBlock}>
         {contactsArr.length > 0 &&
           contactsArr.map(({ name, number, id }) => {
             return (
-              <li className={StyleSheet.list} key={id}>
+              <li className={style.list} key={id}>
                 <p>
-                  {name}:{number}
+                  {name} : {number}
                 </p>
                 <button
                   type="button"

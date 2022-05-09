@@ -1,12 +1,13 @@
 import { render } from '@testing-library/react';
 import React, { Component } from 'react';
 import InputForm from './InputForm/InputForm';
+import contactDefault from './DataDefault/Data.json';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
 
 export class App extends Component {
   state = {
-    contacts: [],
+    contacts: contactDefault,
     filter: '',
   };
 
