@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import style from './InputForm.module.css';
 import { nanoid } from 'nanoid';
 
@@ -7,6 +7,10 @@ class InputForm extends Component {
   state = {
     name: '',
     number: '',
+  };
+
+  static propTypes = {
+    onSubmitForm: PropTypes.func,
   };
 
   onChangeInput = e => {
@@ -33,7 +37,7 @@ class InputForm extends Component {
   render() {
     const { name, number } = this.state;
     return (
-      <form onSubmit={this.onSubmitForm}>
+      <form onSubmit={this.onSubmitForm} className={style.form}>
         <label className={style.label}>
           Name
           <input
@@ -66,9 +70,5 @@ class InputForm extends Component {
     );
   }
 }
-
-InputForm.propTypes = {
-  onSubmit: propTypes.func,
-};
 
 export default InputForm;
