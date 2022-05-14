@@ -57,8 +57,10 @@ export class App extends Component {
         <h2>Contacts</h2>
         <Filter value={this.state.filter} onChange={this.onChangeFilter} />
         <ContactList
-          contactsArr={this.getAddedContacts()}
-          deleteContact={this.onDeleteContact}
+          contacts={this.getAddedContacts()}
+          deleteCont={this.onDeleteContact}
+          // contactsArr={this.getAddedContacts()}
+          // deleteContact={this.onDeleteContact}
         />
       </div>
     );
